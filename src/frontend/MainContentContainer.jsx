@@ -1,4 +1,4 @@
-import MainContent from './MainContent.jsx'
+import MainContent from './MainContent'
 
 function MainContentContainer() {
     return (

@@ -12,7 +12,6 @@ async function numberOfKeys() {
 
 (async () => {
     const keys = await numberOfKeys();
-    console.log(keys);
     return keys;
 })();
 
