@@ -5,11 +5,7 @@ function MainContent() {
     return (
         <>
             <div className="main-content">
-
-
                 <Board />
-
-
             </div>
         </>
     )

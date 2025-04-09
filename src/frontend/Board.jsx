@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from './Button';
 
 function Board() {
@@ -18,6 +18,9 @@ function Board() {
                 ))}
             </div>
         </>
+
+
+
     );
 }
 
