@@ -1,11 +1,11 @@
-export function checkGuess(guessWord, queryWord) {
+export function checkGuess(nrOfLetters, guessWord, queryWord) {
 
     guessWord = guessWord.toUpperCase();
     queryWord = queryWord.toUpperCase();
 
-    const result = new Array(5).fill(null);
-    const reservedIndex = new Array(5).fill(false);
-    const MAX_LETTERS = 5;
+    const result = new Array(nrOfLetters).fill(null);
+    const reservedIndex = new Array(nrOfLetters).fill(false);
+    const MAX_LETTERS = nrOfLetters;
 
     if (guessWord === '') {
         return '';

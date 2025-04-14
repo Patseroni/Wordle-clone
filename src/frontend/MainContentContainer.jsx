@@ -17,7 +17,7 @@ function MainContentContainer() {
             </div>
 
             <div className="grid">
-                {/* empty div for layout purposes */}
+                {/* empty div for layout */}
             </div>
         </>
 

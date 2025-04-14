@@ -4,6 +4,8 @@ async function getData() {
     return data;
 }
 
+
+
 async function numberOfKeys() {
     const data = await getData();
     const nrOfKeys = Object.keys(data);

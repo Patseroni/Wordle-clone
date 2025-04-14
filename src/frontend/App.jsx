@@ -23,4 +23,3 @@ export default App
 // useEffect 
 // onChange - updates in realtime
 // updater function
-// spread operator
