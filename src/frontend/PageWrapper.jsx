@@ -1,16 +1,15 @@
-import Header from "./Header"
-import Menu from "./Menu"
-import MainContentContainer from "./MainContentContainer"
-//import Footer from "./Footer.jsx"
+import Header from "./Header";
+import Menu from "./Menu";
+import MainContentContainer from "./MainContentContainer";
 
-function PageWrapper() {
+function PageWrapper({ wordLength, setWordLength }) {
     return (
         <div className="page-wrapper">
             <Header />
             <Menu />
-            <MainContentContainer />
+            <MainContentContainer wordLength={wordLength} setWordLength={setWordLength} />
         </div>
-    )
+    );
 }
 
-export default PageWrapper
+export default PageWrapper;

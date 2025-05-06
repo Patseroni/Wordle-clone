@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
-import Tile from './Tile';
 import { checkGuess } from '../backend/algorithm';
 
-function Board() {
+function Board({ wordLength }) {
     const [input, setInput] = useState('');
     const [result, setResult] = useState(null);
 
-    const wordLength = 5;
     const secretWord = 'KOMET';
 
     function handleChange(e) {
@@ -18,14 +16,14 @@ function Board() {
             const checked = checkGuess(wordLength, input, secretWord);
             setResult(checked);
             setInput('');
+
         }
     }
 
     return (
 
-
         <div className="board-container">
-            <p className="input-label">Gissa ett hemligt ord på {wordLength} bokstäver:</p>
+            <p className="input-label">Guess the secret word with {wordLength} letters:</p>
             <input
                 className="input-field"
                 type="text"
@@ -38,7 +36,7 @@ function Board() {
                 <div className="result-box">
                     {result.map((item, index) => (
                         <p key={index}>
-                            {item.letter} - {item.result}
+                            {item.letter} - {item.evaluation}
                         </p>
                     ))}
                 </div>

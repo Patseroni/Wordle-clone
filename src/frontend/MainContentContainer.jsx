@@ -1,17 +1,18 @@
 import MainContent from './MainContent'
 import Info from './info'
-import Highscores from '../backend/Highscores';
 import { Routes, Route } from "react-router-dom";
 
-function MainContentContainer() {
+function MainContentContainer({ wordLength, setWordLength }) {
     return (
         <>
             <div className="main-content-container">
 
                 <Routes>
-                    <Route path="/" element={<MainContent />} />
+                    <Route path="/" element={
+                        <MainContent
+                            wordLength={wordLength}
+                            setWordLength={setWordLength} />} />
                     <Route path="/info" element={<Info />} />
-                    <Route path="/highscores" element={<Highscores />} />
                 </Routes>
 
             </div>

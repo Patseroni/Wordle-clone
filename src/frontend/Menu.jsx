@@ -5,8 +5,8 @@ function Menu() {
         <nav className="menu">
             <ul>
                 <li><Link to="/">Play Wordle</Link></li>
+                <li><a href="/highscores">Highscores</a></li>
                 <li><Link to="/info">Information</Link></li>
-                <li><Link to="/highscores">Highscores</Link></li>
             </ul>
         </nav>
 

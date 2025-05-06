@@ -1,25 +1,11 @@
-import PageWrapper from './PageWrapper.jsx';
-import "../backend/api.js";
-import "../backend/algorithm.js";
-//import "../backend/express.js";
+import { useState } from 'react';
+import PageWrapper from './PageWrapper';
 
 function App() {
-  return (
-    <>
-      <PageWrapper />
-    </>
-  )
+  const [wordLength, setWordLength] = useState(5);
+
+  return <PageWrapper wordLength={wordLength} setWordLength={setWordLength} />
 
 }
 
-export default App
-
-
-// propTypes
-// state - const [name, setName] = useState();
-// conditional rendering
-// defaultProps
-// callbacks
-// useEffect 
-// onChange - updates in realtime
-// updater function
+export default App;

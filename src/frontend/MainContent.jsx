@@ -1,14 +1,13 @@
 import Board from "./Board";
-import InfoBox from "./InfoBox";
+import NumberOfLetters from "./NumberOfLetters";
 
-function MainContent() {
+function MainContent({ wordLength, setWordLength }) {
     return (
-        <>
-            <div className="main-content">
-                <Board />
-            </div>
-        </>
-    )
+        <div className="main-content">
+            <NumberOfLetters wordLength={wordLength} setWordLength={setWordLength} />
+            <Board wordLength={wordLength} />
+        </div>
+    );
 }
 
-export default MainContent
+export default MainContent;

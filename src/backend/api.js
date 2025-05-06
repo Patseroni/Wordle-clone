@@ -6,6 +6,7 @@ async function getData() {
 
 
 
+/*
 async function numberOfKeys() {
     const data = await getData();
     const nrOfKeys = Object.keys(data);
@@ -21,4 +22,4 @@ async function getRandomWord() {
     const words = await getData();
     const randomWord = math.random(Object.keys(words));
 }
-
+*/
