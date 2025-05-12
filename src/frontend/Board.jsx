@@ -1,18 +1,31 @@
 import { useState, useEffect } from 'react';
-import { checkGuess } from '../backend/algorithm';
+import { checkGuess } from '../backend/algorithm.js';
 
 function Board({ wordLength }) {
     const [input, setInput] = useState('');
     const [result, setResult] = useState(null);
+    const [secretWord, setSecretWord] = useState('');
 
-    const secretWord = 'KOMET';
+    useEffect(() => {
+        async function getWord() {
+            try {
+                const res = await fetch(`/api/word/${wordLength}`);
+                const data = await res.json();
+                setSecretWord(data.word);
+            } catch (err) {
+                console.error('Error fetching word:', err);
+                setSecretWord('');
+            }
+        }
+        getWord();
+    }, [wordLength]);
 
     function handleChange(e) {
         setInput(e.target.value.toUpperCase());
     }
 
     function handleKeyDown(e) {
-        if (e.key === 'Enter' && input.length === wordLength) {
+        if (e.key === 'Enter' && input.length === wordLength && secretWord) {
             const checked = checkGuess(wordLength, input, secretWord);
             setResult(checked);
             setInput('');
@@ -46,46 +59,3 @@ function Board({ wordLength }) {
 }
 
 export default Board;
-
-
-
-
-
-
-
-
-/*
- 
-const ROWS = 6;
-const col = 5;
- 
-const [grid, setGrid] = useState(() =>
-    Array.from({ length: ROWS }, () => Array(col).fill(""))
-);
-
- 
- 
-function KeyPressEvent(e, rowIndex, colIndex){
-    const value = e.target.value.toUpperCase();
-    
-}
-
-
-return (
-    <>
-        <div className="board">
-            {grid.map((row, rowIndex) => (
-                <div key={rowIndex} className="row">
-                    {row.map((value, colIndex) => (
-                        <Tile key={colIndex} letter={value} />
-                    ))}
-                </div>
-            ))}
-        </div>
-    </>
-
-
-
-);
-
-*/
