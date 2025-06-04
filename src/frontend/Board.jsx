@@ -5,6 +5,7 @@ function Board({ wordLength }) {
     const [input, setInput] = useState('');
     const [result, setResult] = useState(null);
     const [secretWord, setSecretWord] = useState('');
+    const [guesses, setGuesses] = useState([]);
 
     useEffect(() => {
         async function getWord() {
